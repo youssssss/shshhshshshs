@@ -4,7 +4,7 @@ console.log('[INFO]: Loading...');
 const { Client, Collection } = require('discord.js');
 const discord = require('discord.js');
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');
+const { prefix } = require('./config.json');
 //dont touch the credits or i will find you and u will have to commit die >:D
 const client = new Client({
 	disableMentions: 'everyone'
@@ -66,6 +66,6 @@ client.on('message', async message => {
 	if (command) command.run(client, message, args, db);
 });
 
-client.login(token).catch(err => {
+client.login(process.env.TOKEN);
 	console.log('[ERROR]: Invalid Token Provided');
 });
