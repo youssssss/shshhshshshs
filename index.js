@@ -66,6 +66,6 @@ client.on('message', async message => {
 	if (command) command.run(client, message, args, db);
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);.catch(err => {
 	console.log('[ERROR]: Invalid Token Provided');
 });
